@@ -5,5 +5,35 @@
 </ion-header>
 
 <ion-content>
-<ion-button [routerLink]="['/registro']">Ir al registro</ion-button>
+  
+  <form [formGroup]="credentialForm">
+    <ion-item>
+      <ion-input
+        placeholder="Correo electronico"
+        formControlName="email"
+        autofocus="true"
+        clearInput="true"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+      <span *ngIf="email.errors?.required">Correo electronico es requerido</span>
+      <span *ngIf="email.errors?.email">Correo electrono es invalido</span>
+    </div>
+ 
+    <ion-item>
+      <ion-input
+      placeholder="Contraseña"
+      type="password"
+      formControlName="password"
+      clearInput="true"
+    ></ion-input>
+    </ion-item>
+    <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+      <span *ngIf="password.errors?.required">Contraseña es requerido</span>
+      <span *ngIf="password.errors?.minlength">Contraseña es invalido </span>
+    </div>
+  </form>
+ 
+    <ion-button (click)="singUp()" expand="full">Iniciar sesion</ion-button>
+    <ion-button (click)="singIn()" expand="full" color="secondary">Registrarse</ion-button>
 </ion-content>

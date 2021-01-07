@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ionchat-64356": {
+      "hosting": {
+        "app": [
+          "ionchat-64356"
+        ]
+      }
+    }
+  }
+}

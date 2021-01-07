@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title slot="end">Publicaciones social face </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-textarea></ion-textarea>
+    <ion-buttons >
+      <ion-button (click)="pop ($event)">
+        <ion-icon name="folder-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-button slot="end"><ion-icon name="send-outline"></ion-icon>Enviar</ion-button>
+  </ion-item>  
+<ion-card color="primary" *ngFor="let publicacion of publicaciones">
+  <img src="{{publicacion.imagen}}">
+    <ion-card-title>{{publicacion.title}}</ion-card-title>
+    <ion-card-content color="primary">
+        {{publicacion.content}}
+    </ion-card-content>
+</ion-card>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-fab">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+       <ion-fab-button (click)="popoverx ($event)">
+         <ion-icon name="people-outline"></ion-icon>
+      </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+</ion-content>
