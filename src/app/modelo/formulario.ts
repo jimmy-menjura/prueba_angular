@@ -5,5 +5,4 @@ export class Formulario{
     fullName?:string;
     birthdate?:string;
     image?:string;
-    applicantcode?:number;
 }

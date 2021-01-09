@@ -6,7 +6,7 @@
       </div>
     </ion-col> -->
   </ion-row>
- <form [formGroup]="form" (ngSubmit)="registro()">
+ <form [formGroup]="form" (ngSubmit)="agregar()">
    
    <ion-item>
       <ion-label  position="floating" required>
@@ -35,24 +35,24 @@
    
     <ion-item>
       <ion-label>Fecha</ion-label>
-      <ion-datetime displayFormat="YYYY-MM-DD" formControlName="birthdate"></ion-datetime>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" display-timezone="gmt-5" formControlName="birthdate"></ion-datetime>
     </ion-item>
 
-  <ion-button expand="full" block  color="primary" type="submit" style="margin-top: 20px;">
-    Cargar una imagen &nbsp; <ion-icon name="image"></ion-icon>
-  </ion-button>
+    <ion-item>
+      <ion-input required type="file" formControlName="image"></ion-input>
+    </ion-item>
 
-  <ion-item>
+  <!-- <ion-item>
     <ion-label  position="floating" required>
       Código aplicante <ion-text color="danger">*</ion-text>
     </ion-label>
     <ion-input required type="number" name="applicantcode" formControlName="applicantcode"></ion-input>
-  </ion-item>
+  </ion-item> -->
   <ion-button expand="full" block color="primary" type="submit" style="margin-top: 20px;">
-    Login &nbsp; <ion-icon name="log-in"></ion-icon>
+    Registrarse &nbsp; <ion-icon name="log-in"></ion-icon>
   </ion-button>
   <ion-col size="12">
-    <ion-text color="primary" routerLink="/home" class="register_link" style="justify-content: center;">
+    <ion-text color="primary" routerLink="/login" class="register_link" style="justify-content: center;">
       <b>Ir a login</b>
     </ion-text>
   </ion-col>

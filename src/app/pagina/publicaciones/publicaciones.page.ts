@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import {InfoImagenesPage} from '../info-imagenes/info-imagenes.page';
 import {InfoChatPage} from '../info-chat/info-chat.page';
+// import { FabContainer } from 'ionic-angular';
 @Component({
   selector: 'app-publicaciones',
   templateUrl: './publicaciones.page.html',
@@ -45,5 +46,8 @@ async pop(evento:any){
     });
     await popover.present();
   }
+  // fresh(fab?:  FabContainer):void {
+
+  // }
 
 }

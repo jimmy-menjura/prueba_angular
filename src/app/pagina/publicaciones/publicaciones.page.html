@@ -25,12 +25,12 @@
         {{publicacion.content}}
     </ion-card-content>
 </ion-card>
-<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-fab">
-  <ion-fab-button>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-fab" #fab>
+  <ion-fab-button >
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
   <ion-fab-list side="top">
-       <ion-fab-button (click)="popoverx ($event)">
+       <ion-fab-button (click)="popoverx ($event)" >
          <ion-icon name="people-outline"></ion-icon>
       </ion-fab-button>
   </ion-fab-list>

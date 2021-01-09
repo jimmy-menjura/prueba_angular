@@ -6,10 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiciosService {
-  myApurl = 'http://apibitwanv1.tk/public';
-  myApiUrl = '/users/create';
+  myApurl = 'http://localhost:8000/api/login';
+  miUrl = 'http://localhost:8000/api/create';
   constructor(private http: HttpClient) { }
-  guardarFormulario(formulario:Formulario):Observable<Formulario>{
-    return this.http.post<Formulario>(this.myApurl + this.myApiUrl,formulario);
+  // guardarFormulario(formulario:Formulario):Observable<Formulario>{
+  //   return this.http.post<Formulario>(this.myApurl + this.myApiUrl,formulario);
+  // }
+  iniciarSesion(formulario:Formulario):Observable<Formulario>{
+    return this.http.post<Formulario>(this.myApurl,formulario);
+  }
+  Registro(formulario:Formulario):Observable<Formulario>{
+    return this.http.post<Formulario>(this.miUrl,formulario);
   }
 }
